@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <title>Weather at {{ city }}</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-4" style="text-align:center;">Weather Dashboard</h1>
+                <p class="lead" style="text-align:center;">Real time weather just a click away!</p>
+                <hr>
+                <form action="{{ url_for('render_result') }}" method='POST'>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">City :</span>
+                        </div>
+                        <input type="text" name='city_name' class="form-control">
+                        <button type='submit' class="btn btn-success">Get Weather</button>                   
+                    </div>                         
+                </form>  
+                <div class="card"  style="width: 18 rem;">
+                    <img class="card-img-top" src="https://19yw4b240vb03ws8qm25h366-wpengine.netdna-ssl.com/wp-content/uploads/5-Best-Free-and-Paid-Weather-APIs-2019-e1587582023501-1024x576.png">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ city }}</h3>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <h3 class="display-2">{{ temp }}° C</h3>
+                            </div>
+                            <div class="col-6">
+                                <h3 class="display-4">{{ weather }}</h3>
+                            </div>
+                            <div class="col">
+                                <h3 class="display-6">Wind: {{ wind_speed }} Kmph @ {{ wind_deg }}°</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>             
+            </div>
+        </div>
+    </body>
+</html>

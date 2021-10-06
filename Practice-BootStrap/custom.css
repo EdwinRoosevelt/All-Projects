@@ -1,0 +1,10 @@
+h1 {
+    text-align: center;
+}
+
+.jumbotron .h1 {
+    color: blue
+    line-height: 1;
+    color: inherit;
+    background-color: rgb(214, 22, 22);
+  }
